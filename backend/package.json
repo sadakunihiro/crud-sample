@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "prinvate": true,
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "node -r dotenv/config server.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4"
+  }
+}
