@@ -10,7 +10,7 @@ spec:
     - name: catalog-frontend
       protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 3000
   selector:
     app: acmefit
     service: catalog-frontend
@@ -49,5 +49,5 @@ spec:
         - name: VUE_APP_API_PORT
           value: '8082'
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
           name: http-catalog
