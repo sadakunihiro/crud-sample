@@ -1,5 +1,7 @@
 const express = require('express');
+const cors = require('cors')
 const app = express();
+app.use(cors())
 
 const MongoClient = require('mongodb').MongoClient;
 const dbname = "acmefit";
@@ -8,6 +10,7 @@ const dbport = process.env.CATALOG_DB_PORT;
 const dbuser = process.env.CATALOG_DB_USERNAME;
 const dbpass = process.env.password;
 const dburl = 'mongodb://' + dbuser + ':' + dbpass + '@' + dbhost + ':' + dbport + '/' + dbname;
+const port = process.env.PORT | 8881;
 
 var db;
 MongoClient.connect(dburl, (err, database) => {
@@ -20,7 +23,6 @@ app.get('/', (req, res) => {
   });
 });
 
-const port = 3000;
 app.listen(port, () => {
   console.log('listen: ' + port);
 });
