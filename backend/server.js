@@ -1,6 +1,6 @@
 const express = require('express');
-const cors = require('cors')
 const app = express();
+const cors = require('cors')
 app.use(cors())
 
 const MongoClient = require('mongodb').MongoClient;
@@ -10,7 +10,7 @@ const dbport = process.env.CATALOG_DB_PORT;
 const dbuser = process.env.CATALOG_DB_USERNAME;
 const dbpass = process.env.password;
 const dburl = 'mongodb://' + dbuser + ':' + dbpass + '@' + dbhost + ':' + dbport + '/' + dbname;
-const port = process.env.PORT | 8881;
+const port = process.env.PORT;
 
 var db;
 MongoClient.connect(dburl, (err, database) => {

@@ -61,13 +61,3 @@ spec:
         ports:
         - containerPort: 8082
           name: http-catalog
-        volumeMounts:
-        - mountPath: "/data"
-          name: "acmefit-catalog-data"
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "100m"
-          limits:
-            memory: "256Mi"
-            cpu: "500m"

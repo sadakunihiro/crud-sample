@@ -9,10 +9,12 @@ spec:
   ports:
     - name: http-catalog-frontend
       protocol: TCP
-      port: 8882
+      port: 80
+      targetPort: 80
   selector:
     app: acmefit
     service: catalog-frontend
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
