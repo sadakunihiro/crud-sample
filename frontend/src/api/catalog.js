@@ -2,12 +2,14 @@
  * client-server processing
  */
 import axios from 'axios'
-//axios.defaults.withCredentials = true
-//const _products = []
+const host = process.env.VUE_APP_API_HOST
+const port = process.env.VUE_APP_API_PORT
+const apiurl = 'http://' + host + ':' + port
+console.log("api server: " + apiurl)
 
 export default {
   getProducts (cb) {
-    axios.get('http://192.168.1.18:8889')
+    axios.get(apiurl)
     .then(response => {
       cb(response.data)
     })
