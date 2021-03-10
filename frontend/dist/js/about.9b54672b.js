@@ -1,0 +1,2 @@
+(self["webpackChunkfrontend"]=self["webpackChunkfrontend"]||[]).push([[443],{9211:function(n,e,t){"use strict";t.r(e),t.d(e,{default:function(){return f}});var u=t(6252),r={class:"about"},a=(0,u.Wm)("h1",null,"This is an about page",-1);function s(n,e){return(0,u.wg)(),(0,u.j4)("div",r,[a])}const c={};c.render=s;var f=c}}]);
+//# sourceMappingURL=about.9b54672b.js.map
