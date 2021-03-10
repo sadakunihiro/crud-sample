@@ -34,7 +34,7 @@ spec:
   template:
     metadata:
       labels:
-        app: acmeft
+        app: acmefit
         service: catalog-frontend
         version: v1
     spec:
