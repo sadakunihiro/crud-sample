@@ -7,7 +7,7 @@ metadata:
     service: catalog-api
 spec:
   ports:
-    - name: http-catalog-api
+    - name: catalog-api
       protocol: TCP
       port: 8082
   selector:

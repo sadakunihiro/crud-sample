@@ -2,8 +2,8 @@
  * client-server processing
  */
 import axios from 'axios'
-const host = process.env.VUE_APP_API_HOST
-const port = process.env.VUE_APP_API_PORT
+const host = process.env.VUE_APP_API_HOST // || 'catalog-api'
+const port = process.env.VUE_APP_API_PORT // || '8082'
 const apiurl = 'http://' + host + ':' + port
 console.log("api server: " + apiurl)
 

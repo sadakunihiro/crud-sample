@@ -8,18 +8,24 @@ const dbname = "acmefit";
 const dbhost = process.env.CATALOG_DB_HOST;
 const dbport = process.env.CATALOG_DB_PORT;
 const dbuser = process.env.CATALOG_DB_USERNAME;
-const dbpass = process.env.password;
-const dburl = 'mongodb://' + dbuser + ':' + dbpass + '@' + dbhost + ':' + dbport + '/' + dbname;
+const dbpass = process.env.CATALOG_DB_PASSWORD;
+const dburl = 'mongodb://' + dbuser + ':' + dbpass + '@' + dbhost + ':' + dbport // + '/' + dbname;
 const port = process.env.PORT;
 
+console.log("dburl:", dburl)
 var db;
 MongoClient.connect(dburl, (err, database) => {
-  db = err? null : database.db(dbname);
+  if (err) {
+    console.log("connect db error:",err)
+  } else {
+    db = database.db(dbname);
+  }
 });
 
 app.get('/', (req, res) => {
   db.collection("catalog").find({}).toArray((err, docs) => {
-    res.json(err? err : docs);
+    if (err) { console.log("find:",err) }
+    res.json(err? "" : docs);
   });
 });
 
