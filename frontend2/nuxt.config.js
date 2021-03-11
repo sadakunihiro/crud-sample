@@ -43,6 +43,10 @@ export default {
       baseURL: process.env.VUE_APP_API_URL
     }
   },
+  server: {
+    host: '0.0.0.0',
+    port: 3000
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
