@@ -9,7 +9,7 @@ const dbhost = process.env.CATALOG_DB_HOST;
 const dbport = process.env.CATALOG_DB_PORT;
 const dbuser = process.env.CATALOG_DB_USERNAME;
 const dbpass = process.env.CATALOG_DB_PASSWORD;
-const dburl = 'mongodb://' + dbuser + ':' + dbpass + '@' + dbhost + ':' + dbport // + '/' + dbname;
+const dburl = 'mongodb://' + dbuser + ':' + dbpass + '@' + dbhost + ':' + dbport  + '/' + dbname;
 const port = process.env.PORT;
 
 console.log("dburl:", dburl)
@@ -23,6 +23,7 @@ MongoClient.connect(dburl, (err, database) => {
 });
 
 app.get('/', (req, res) => {
+  console.log("GET / request IP", req.connection.remoteAddress)
   db.collection("catalog").find({}).toArray((err, docs) => {
     if (err) { console.log("find:",err) }
     res.json(err? "" : docs);
