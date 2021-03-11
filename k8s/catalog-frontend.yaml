@@ -44,10 +44,8 @@ spec:
       - image: sadakunihiro/crud-frontend
         name: catalog-frontend
         env:
-        - name: VUE_APP_API_HOST
-          value: 'catalog-api'
-        - name: VUE_APP_API_PORT
-          value: '8082'
+        - name: VUE_APP_API_URL
+          value: 'http://catalog-api:8082'
         ports:
         - containerPort: 3000
           name: http-catalog
