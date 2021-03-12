@@ -46,6 +46,8 @@ spec:
         env:
         - name: VUE_APP_API_URL
           value: 'http://catalog-api:8082'
+        - name: PORT
+          value: 3000
         ports:
         - containerPort: 3000
           name: http-catalog

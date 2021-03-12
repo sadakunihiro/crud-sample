@@ -70,7 +70,7 @@ export default {
   },
   watch: {
     isActive (nv) {
-      console.log("Posinput/watch key:",this.key)
+      //console.log("Posinput/watch key:",this.key)
       if (nv) {
         this.item = this.$store.getters.getItemByKey(this.key)
       }

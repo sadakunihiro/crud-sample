@@ -15,12 +15,12 @@ export default {
     ItemList, Posinput
   },
   async fetch(context) {
-    console.log("index.vue fetch: url:", process.env.VUE_APP_API_URL)
-    const res = await context.$axios.get(process.env.VUE_APP_API_URL)
+    //console.log("index.vue/fetch/axios.defaults.baseURL:", context.$axios.defaults.baseURL)
+    const res = await context.$axios.get('/')
     context.store.commit('setall', res.data)
   },
   asyncData(context) {
-    //console.log("index.vue asyncData")
+    console.log("index.vue/asyncData")
   }
 }
 </script>
