@@ -49,7 +49,6 @@ export default {
 .button {
   border-width: 0;
   padding: 3px;
-  color: coral;
 }
 .table {
   margin: 10px;
