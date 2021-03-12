@@ -49,7 +49,7 @@ export default {
 .button {
   border-width: 0;
   padding: 3px;
-  color: red;
+  color: coral;
 }
 .table {
   margin: 10px;
