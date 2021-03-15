@@ -49,6 +49,7 @@ export default {
 .button {
   border-width: 0;
   padding: 3px;
+  color: blue;
 }
 .table {
   margin: 10px;
