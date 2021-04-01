@@ -9,7 +9,7 @@ const dbhost = process.env.CATALOG_DB_HOST;
 const dbport = process.env.CATALOG_DB_PORT;
 const dbuser = process.env.CATALOG_DB_USERNAME;
 const dbpass = process.env.CATALOG_DB_PASSWORD;
-const dburl = 'mongodb://' + dbuser + ':' + dbpass + '@' + dbhost + ':' + dbport  + '/' + dbname;
+const dburl = 'mongodb://' + dbuser + ':' + dbpass + '@' + dbhost + ':' + dbport; //  + '/' + dbname;
 const port = process.env.PORT;
 
 console.log("dburl:", dburl)
