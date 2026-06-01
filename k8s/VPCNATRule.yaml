@@ -1,0 +1,37 @@
+formatVersion: 1
+inputs: {}
+resources:
+  CCI_VPC_1:
+    type: CCI.VPC
+    metadata:
+      layoutPosition:
+        - 0
+        - 0
+    properties:
+      regionName: us-east-a
+      generateName: default-us-east-a
+      privateIPs:
+        - 172.16.203.0/24
+  NAT_Rule_1:
+    type: CCI.VPC.Configuration
+    metadata:
+      layoutPosition:
+        - 0
+        - 0
+    properties:
+      vpc: ${resource.CCI_VPC_1.id}
+      kind: VPCNATRule
+      configs:
+        - generateName: nat-001
+          spec:
+            action: SNAT
+            enabled: true
+            firewallMatch: MatchInternalAddress
+            logging: false
+            sequenceNumber: 0
+            translatedNetwork: 10.10.10.2
+      apiVersion: vpc.nsx.vmware.com/v1alpha1
+      wait:
+        conditions:
+          - type: Realized
+            status: 'True'
